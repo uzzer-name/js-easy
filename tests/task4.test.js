@@ -6,3 +6,6 @@ test('finds the maximum number in an array', () => {
   expect(findMax([-1, -5, -3])).toBe(-1);
   expect(findMax([42])).toBe(42);
 });
+test('array is null', () => {
+  expect(findMax([])).toBe(null);
+});

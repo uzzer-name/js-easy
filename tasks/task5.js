@@ -1,22 +1,21 @@
 // Задача: Напишіть функцію countOccurrences, яка приймає рядок і символ,
 //  і повертає кількість входжень цього символу в рядку.
 
-
 function countOccurrences(str, char) {
-	let count = 0; // Ініціалізуємо лічильник
-  
-	for (let i = 0; i < str.length; i++) {
-	  // Якщо поточний символ дорівнює char, збільшуємо лічильник
-	  if (str[i] === char) {
-		count++;
-	  }
-	}
-	
-	return count; // Повертаємо кількість входжень
-  }
+    let count = 0; // Змінна для підрахунку кількості символів
+    let i = 0;     // Індекс для перебору рядка
 
-// Приклади використання:
-console.log(countOccurrences("hello world", 'o')); // Виведе: 2
-console.log(countOccurrences("banana", 'a'));       // Виведе: 3
+    // Проходимо через рядок
+    while (i < str.length) {
+        if (str[i] === char) {
+            count++; // Збільшуємо лічильник, якщо символ знайдено
+        }
+        i++; // Збільшуємо індекс
+    }
+
+    return count; // Повертаємо кількість використань символу
+}
+
+//console.log(countOccurrences("enterprice", "e")); // 2
 
 module.exports = countOccurrences;

@@ -1,25 +1,19 @@
 // Задача: Написати функцію, яка приймає рядок і замінює всі голосні (a, e, i, o, u) 
 // на певний символ, наприклад *.
+function replaceVowels(input) {
+    const vowelList = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+    let modifiedString = '';
 
-function replaceVowels(str) {
-	// Створюємо масив з голосними
-	const vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
-	// Створюємо порожній рядок для збереження результату
-	let result = '';
-	
-	for (let char of str) {
-	  // Якщо символ є голосною, додаємо '*' до результату, інакше додаємо сам символ
-	  if (vowels.includes(char)) {
-		result += '*';
-	  } else {
-		result += char;
-	  }
-	}
-	
-	return result;
-  }
+    for (let char of input) {
+        if (vowelList.includes(char)) {
+            modifiedString += '*';
+        } else {
+            modifiedString += char;
+        }
+    }
 
-console.log(replaceVowels("hello world")); // Виведе: "h*ll* w*rld"
-console.log(replaceVowels("Javascript"));  // Виведе: "J*v*scr*pt"
+    return modifiedString;
+}
 
+//console.log(replaceVowels("Hello, World!")); // H*ll*, W*rld!
 module.exports = replaceVowels;
